@@ -18,8 +18,8 @@
     </PropertyGroup>
 </Project>
 ```
-##2.2 각각의 프로젝트에 Nurget 패키지 관리자를 통해 Microsoft.EntityFrameworkCore.Sqlite 설치
-##2.3 iOS 의 경우 아래 코드추가 (AppDelegate.cs)
+## 2.2 각각의 프로젝트에 Nurget 패키지 관리자를 통해 Microsoft.EntityFrameworkCore.Sqlite 설치
+## 2.3 iOS 의 경우 아래 코드추가 (AppDelegate.cs)
 ```
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
