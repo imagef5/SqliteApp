@@ -17,7 +17,7 @@ namespace SqliteApp.Repository
             _databaseContext = new DatabaseContext();
         }
 
-        public async Task<IEnumerable<Product>> GetProductsAsync()
+        public async Task<IList<Product>> GetProductsAsync()
         {
             try
             {
@@ -52,10 +52,9 @@ namespace SqliteApp.Repository
             try
             {
                 var tracking = await _databaseContext.Products.AddAsync(product);
+                var isAdded = tracking.State == EntityState.Added;
 
                 await _databaseContext.SaveChangesAsync();
-
-                var isAdded = tracking.State == EntityState.Added;
 
                 return isAdded;
             }
@@ -71,10 +70,9 @@ namespace SqliteApp.Repository
             try
             {
                 var tracking = _databaseContext.Update(product);
+                var isModified = tracking.State == EntityState.Modified;
 
                 await _databaseContext.SaveChangesAsync();
-
-                var isModified = tracking.State == EntityState.Modified;
 
                 return isModified;
             }
@@ -92,10 +90,9 @@ namespace SqliteApp.Repository
                 var product = await _databaseContext.Products.FindAsync(id);
 
                 var tracking = _databaseContext.Remove(product);
+                var isDeleted = tracking.State == EntityState.Deleted;
 
                 await _databaseContext.SaveChangesAsync();
-
-                var isDeleted = tracking.State == EntityState.Deleted;
 
                 return isDeleted;
             }
@@ -106,7 +103,7 @@ namespace SqliteApp.Repository
             }
         }
 
-        public async Task<IEnumerable<Product>> QueryProductsAsync(Func<Product, bool> predicate)
+        public async Task<IList<Product>> QueryProductsAsync(Func<Product, bool> predicate)
         {
             try
             {

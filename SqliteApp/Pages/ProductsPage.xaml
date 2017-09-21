@@ -2,13 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="SqliteApp.Pages.ProductsPage"
-    Title="Entity Framework Core - SQLite">
-    
+    xmlns:behavior="clr-namespace:SqliteApp.Behaviors"
+    Title="Entity Framework Core - SQLite"
+    >
+    <ContentPage.Behaviors>
+        <behavior:EventToCommandBehavior EventName="Appearing" 
+                                        Command="{Binding RefreshCommand}" />
+    </ContentPage.Behaviors>
 	<StackLayout Spacing="10"
                  Padding="20">
 
         <Entry Text="{Binding ProductTitle}" />
-        <Entry Text="{Binding ProductPrice}" />
+        <Entry Text="{Binding ProductPrice}" Keyboard="Numeric" />
 
         <Button Text="Add Product"
                 TextColor="White"

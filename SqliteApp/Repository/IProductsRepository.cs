@@ -7,7 +7,7 @@ namespace SqliteApp.Repository
 {
     public interface IProductsRepository
     {
-        Task<IEnumerable<Product>> GetProductsAsync();
+        Task<IList<Product>> GetProductsAsync();
 
         Task<Product> GetProductByIdAsync(int id);
 
@@ -17,6 +17,6 @@ namespace SqliteApp.Repository
 
         Task<bool> RemoveProductAsync(int id);
 
-        Task<IEnumerable<Product>> QueryProductsAsync(Func<Product, bool> predicate);
+        Task<IList<Product>> QueryProductsAsync(Func<Product, bool> predicate);
     }
 }

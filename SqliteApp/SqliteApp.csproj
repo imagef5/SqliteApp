@@ -31,5 +31,6 @@
       <Folder Include="Models\" />
       <Folder Include="ViewModels\" />
       <Folder Include="Repository\" />
+      <Folder Include="Behaviors\" />
     </ItemGroup>
 </Project>
