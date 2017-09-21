@@ -17,6 +17,7 @@ namespace SqliteApp.Repository
             _databasePath = DependencyService.Get<IDbFileHelper>().GetLocalDbFilePath("ProductsSqlite.db");
 
             //Database.EnsureDeleted();
+            //Database.Migrate();
             Database.EnsureCreated();
         }
 
