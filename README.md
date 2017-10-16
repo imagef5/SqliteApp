@@ -37,4 +37,6 @@
     }
 ```
 
->참고 : 이전 버전의 EF Core를 사용하는 경우 5.0 이하의 Mono 버전에서 실행하면 iOS에서 다음 오류가 발생하며, EF Core 2.0을 사용하려면 Mono 5.2 이상이 필요합니다. Visual Studio 15.3 이상을 하기시 바랍니다.
+>참고 : 이전 버전의 EF Core를 사용하는 경우 5.0 이하의 Mono 버전에서 실행하면 iOS에서 다음 오류가 발생하며, EF Core 2.0을 사용하려면 Mono 5.2 이상이 필요합니다. Visual Studio 15.3 이상을 사용 하기시 바랍니다.
+>참고 동영상 : https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-15-Upgrading-to-XamarinForms-to-NET-Standard?ocid=player
+
