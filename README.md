@@ -14,7 +14,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <PackageTargetFallback>$(PackageTargetFallback);portable-win+net45+wp8+win81+wpa8</PackageTargetFallback>
+        <!-- PackageTargetFallback 태그는 netstandard2.0 에서는 지원하지 않음. 2.0 이하 버전에서 기존의 PCL코드를 참조하는 경우 추가 -->
+        <!--PackageTargetFallback>$(PackageTargetFallback);portable-win+net45+wp8+win81+wpa8</PackageTargetFallback-->
     </PropertyGroup>
 </Project>
 ```
